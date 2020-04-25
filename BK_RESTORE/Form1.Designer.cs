@@ -50,7 +50,6 @@
             this.colname1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colbackup_start_date = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coluser_name = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.button1 = new System.Windows.Forms.Button();
             this.txbSQL = new System.Windows.Forms.TextBox();
             this.chkXoaBackup = new System.Windows.Forms.CheckBox();
             this.dtpDateTime = new System.Windows.Forms.DateTimePicker();
@@ -73,8 +72,9 @@
             this.chbThamSo.Size = new System.Drawing.Size(178, 17);
             this.chbThamSo.TabIndex = 1;
             this.chbThamSo.Text = "Tham số phục hồi theo thời gian";
-            this.toolTip1.SetToolTip(this.chbThamSo, "Thời gian phục hồi cách thời gian Backup ít nhất 5 phút.");
+            this.toolTip1.SetToolTip(this.chbThamSo, "Thời gian phục hồi cách thời gian Backup gần nhất ít nhất 5 phút.");
             this.chbThamSo.UseVisualStyleBackColor = true;
+            this.chbThamSo.CheckedChanged += new System.EventHandler(this.chbThamSo_CheckedChanged);
             this.chbThamSo.Click += new System.EventHandler(this.chbThamSo_Click);
             // 
             // menuSaoLuu
@@ -240,17 +240,6 @@
             this.coluser_name.VisibleIndex = 3;
             this.coluser_name.Width = 257;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(479, 149);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "button1";
-            this.toolTip1.SetToolTip(this.button1, "Button");
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // txbSQL
             // 
             this.txbSQL.Location = new System.Drawing.Point(220, 195);
@@ -278,7 +267,7 @@
             this.dtpDateTime.Name = "dtpDateTime";
             this.dtpDateTime.Size = new System.Drawing.Size(200, 20);
             this.dtpDateTime.TabIndex = 8;
-            this.toolTip1.SetToolTip(this.dtpDateTime, "Time");
+            this.toolTip1.SetToolTip(this.dtpDateTime, "Thời gian phục hồi cách thời gian Backup gần nhất ít nhất 5 phút.");
             this.dtpDateTime.Visible = false;
             // 
             // Form1
@@ -289,7 +278,6 @@
             this.Controls.Add(this.dtpDateTime);
             this.Controls.Add(this.chkXoaBackup);
             this.Controls.Add(this.txbSQL);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.position_backupGridControl);
             this.Controls.Add(this.databasesGridControl);
             this.Controls.Add(this.chbThamSo);
@@ -334,7 +322,6 @@
 		private DevExpress.XtraGrid.Columns.GridColumn colname1;
 		private DevExpress.XtraGrid.Columns.GridColumn colbackup_start_date;
 		private DevExpress.XtraGrid.Columns.GridColumn coluser_name;
-		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.TextBox txbSQL;
 		private System.Windows.Forms.CheckBox chkXoaBackup;
 		private System.Windows.Forms.DateTimePicker dtpDateTime;
