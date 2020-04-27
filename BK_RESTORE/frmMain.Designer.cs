@@ -1,6 +1,6 @@
 ﻿namespace BK_RESTORE
 {
-	partial class Form1
+	partial class frmMain
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -270,7 +270,7 @@
             this.toolTip1.SetToolTip(this.dtpDateTime, "Thời gian phục hồi cách thời gian Backup gần nhất ít nhất 5 phút.");
             this.dtpDateTime.Visible = false;
             // 
-            // Form1
+            // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -283,7 +283,8 @@
             this.Controls.Add(this.chbThamSo);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Name = "frmMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);

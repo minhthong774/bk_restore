@@ -19,13 +19,11 @@ namespace BK_RESTORE
 		public static SqlDataReader myReader;
 
 		public static String servername = "DESKTOP-T0NKFJS\\LIEMNGUYEN";
-		public static String loginname = "sa";
-		public static String password = "12345";
+		public static String loginname ;
+		public static String password ;
 		public static string dbName = "";
-		public static String bakdevname;
-		public static BindingSource bdsPbs;
 
-		public static String defaultPath = "D:/Code/C#/ChuyenDeCongNghePhanMem/BK_RESTORE/Backup_Restore_DB/";
+		public static String defaultPath = "D:\\Code\\C#\\ChuyenDeCongNghePhanMem\\BK_RESTORE\\Backup_Restore_DB\\";
 
 		public static int KetNoi() //null thì lỗi, không null thì chạy
 		{
@@ -74,7 +72,7 @@ namespace BK_RESTORE
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new Form1());
+			Application.Run(new frmLogin());
 		}
 	}
 }
