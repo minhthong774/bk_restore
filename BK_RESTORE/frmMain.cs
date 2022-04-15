@@ -55,6 +55,7 @@ namespace BK_RESTORE
 
         private void gridView2_Click(object sender, EventArgs e)
         {
+            if (gridView2.RowCount <= 0) return;
             position = ((DataRowView)position_backupBindingSource[position_backupBindingSource.Position])["position"].ToString();
 
         }
@@ -96,6 +97,7 @@ namespace BK_RESTORE
             else
             {
                 MessageBox.Show("Sao lưu thất bại!");
+                return;
             }
             Program.myReader.Close();
 
@@ -112,9 +114,6 @@ namespace BK_RESTORE
                 int lessNow = (timeBackup - dtpDateTime.Value).Minutes;
                 if (lessNow < -5)
                 {
-
-
-
                     DialogResult dialogResult = MessageBox.Show(
                         "Backup gần nhất: " + timeBackup + "\nThời gian phục hồi: " + dtpDateTime.Value,
                         "",
@@ -131,11 +130,13 @@ namespace BK_RESTORE
                         ALTER DATABASE SINHVIEN SET MULTI_USER
                      */
                         String path = Program.defaultPath + Program.dbName;
+                        String path1 = Program.defaultPath + "DEVICE_" + Program.dbName;
                         sqlQuery = "ALTER DATABASE " + Program.dbName + " SET SINGLE_USER WITH ROLLBACK IMMEDIATE " +
                                     "USE MASTER " +
                                     "BACKUP LOG " + Program.dbName + " TO DISK = '" + path + ".TRN' WITH NORECOVERY " +
-                                    "RESTORE DATABASE " + Program.dbName + " FROM DISK = '" + path + ".BAK' WITH NORECOVERY " +
-                                    "RESTORE DATABASE " + Program.dbName + " FROM DISK = '" + path + ".TRN' WITH STOPAT = " + dtpDateTime.Value.ToString("yyyy-MM-dd HH:mm:ss ") + "'";
+                                    "RESTORE DATABASE " + Program.dbName + " FROM DISK = '" + path1 + ".BAK' WITH NORECOVERY " +
+                                    "RESTORE DATABASE " + Program.dbName + " FROM DISK = '" + path + ".TRN' WITH STOPAT = " + "'" + dtpDateTime.Value.ToString("yyyy-MM-dd HH:mm:ss ") + "'" +
+                                    "ALTER DATABASE " + Program.dbName + " SET MULTI_USER";
 
                         txbSQL.Text = sqlQuery;
                     }
@@ -168,6 +169,7 @@ namespace BK_RESTORE
             else
             {
                 MessageBox.Show("Phục hồi thất bại!");
+                return;
             }
             Program.myReader.Close();
 
@@ -233,6 +235,11 @@ namespace BK_RESTORE
         private void chbThamSo_CheckedChanged(object sender, EventArgs e)
         {
             dtpDateTime.MaxDate = DateTime.Now;
+        }
+
+        private void databasesGridControl_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -18,12 +18,12 @@ namespace BK_RESTORE
 		public static String connstr;
 		public static SqlDataReader myReader;
 
-		public static String servername = "DESKTOP-T0NKFJS\\LIEMNGUYEN";
+		public static String servername = "DESKTOP-0HM29FR";
 		public static String loginname ;
 		public static String password ;
 		public static string dbName = "";
 
-		public static String defaultPath = "D:\\Code\\C#\\ChuyenDeCongNghePhanMem\\BK_RESTORE\\Backup_Restore_DB\\";
+		public static String defaultPath = "C:\\Program Files\\Microsoft SQL Server\\MSSQL15.MSSQLSERVER\\MSSQL\\Backup\\";
 
 		public static int KetNoi() //null thì lỗi, không null thì chạy
 		{

@@ -141,6 +141,7 @@
             this.databasesGridControl.TabIndex = 3;
             this.databasesGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.databasesGridControl.Click += new System.EventHandler(this.databasesGridControl_Click);
             // 
             // gridView1
             // 

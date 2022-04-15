@@ -16,7 +16,7 @@ namespace BK_RESTORE
         {
             InitializeComponent();
             txtUser.Text = "sa";
-            txtPass.Text = "12345";
+            txtPass.Text = "123456";
         }
 
         private void button1_Click(object sender, EventArgs e)
